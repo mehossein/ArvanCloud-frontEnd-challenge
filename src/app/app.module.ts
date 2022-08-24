@@ -4,9 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // app
+import { BASE_URL } from '@shared/tokens';
+import { environment } from '@env/environment';
 import { AppComponent } from './app.component';
-import { AlertService } from '@shared/services';
 import { CoreModule } from '@core/core.module';
+import { AlertService } from '@shared/services';
 import { AppRoutingModule } from './app.routing';
 
 // 3'rd party
@@ -27,6 +29,9 @@ import { ToastrModule } from 'ngx-toastr';
     CoreModule,
   ],
   bootstrap: [AppComponent],
-  providers: [AlertService],
+  providers: [
+    AlertService,
+    { provide: BASE_URL, useValue: environment.baseUrl },
+  ],
 })
 export class AppModule {}
