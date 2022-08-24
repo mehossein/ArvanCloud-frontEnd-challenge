@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "rebase": "node ./scripts/rebase.js",
+    "publish": "node ./scripts/rebase.js && node ./scripts/publish.js"
   },
   "private": true,
   "dependencies": {

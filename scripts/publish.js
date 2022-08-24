@@ -35,4 +35,4 @@ async function publish() {
 
 publish();
 
-module.exports = rebase;
+module.exports = publish;
