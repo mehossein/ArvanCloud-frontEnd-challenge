@@ -9,7 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
-// 3'rd party
+// Third-Party
 import { EMPTY, Observable, throwError } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
 

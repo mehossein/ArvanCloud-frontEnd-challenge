@@ -11,7 +11,7 @@ import { CoreModule } from '@core/core.module';
 import { AlertService } from '@shared/services';
 import { AppRoutingModule } from './app.routing';
 
-// 3'rd party
+// Third-Party
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     BrowserAnimationsModule,
 
-    // 3'rd party
+    // Third-Party
     ToastrModule.forRoot(),
 
     //app
