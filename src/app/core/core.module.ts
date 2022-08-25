@@ -16,6 +16,7 @@ import { HttpsInterceptor } from './services';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpsInterceptor,
+      multi: true,
     },
   ],
 })

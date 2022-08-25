@@ -5,7 +5,7 @@ import { CanActivate } from '@angular/router';
 // app
 import { CookieHandler } from '@shared/classes';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
   canActivate(): boolean {
     CookieHandler.removeToken();
