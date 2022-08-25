@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  height: 100vh;
+  place-content: center;
+
+  &-box {
+    background-color: var(--gray-100);
+    align-self: center;
+    width: 30%;
+    border-radius: 4px;
+    padding: 35px 20px 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .form .form-box {
+    width: 40%;
+  }
+}
+
+@media (max-width: 900px) {
+  .form .form-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 700px) {
+  .form .form-box {
+    width: 65%;
+  }
+}
+
+@media (max-width: 500px) {
+  .form .form-box {
+    width: 75%;
+  }
+}
+
+@media (max-width: 400px) {
+  .form .form-box {
+    width: 90%;
+  }
+}

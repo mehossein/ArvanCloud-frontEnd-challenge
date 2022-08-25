@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+// angular
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'arvan-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss']
+  styleUrls: ['./container.component.scss'],
 })
-export class ContainerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class ContainerComponent {}
