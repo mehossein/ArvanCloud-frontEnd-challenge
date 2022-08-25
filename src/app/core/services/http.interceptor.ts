@@ -62,9 +62,6 @@ export class HttpsInterceptor implements HttpInterceptor {
         CookieHandler.removeToken();
         this._router.navigate(['auth/login']);
         return throwError(() => error);
-      case 403:
-        this._alertSrv.warning('You do not have permission !');
-        return throwError(() => error);
       default:
         this._alertSrv.error(error.error.message);
         return throwError(() => error);
