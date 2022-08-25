@@ -1,1 +1,96 @@
-<p>register works!</p>
+<h1 class="register-title">Register</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate autocomplete="off">
+  <div class="mb-4">
+    <label for="user" class="form-label"> User </label>
+    <input
+      [ngClass]="{
+        ' is-invalid': getInputIsValid('username')
+      }"
+      id="user"
+      required
+      type="text"
+      class="form-control"
+      [readonly]="pending"
+      formControlName="username"
+    />
+    <ng-container *ngIf="getInputIsValid('username')">
+      <div
+        class="invalid-feedback"
+        *ngIf="form.get('username')?.hasError('required')"
+      >
+        This field is required !
+      </div>
+      <div
+        class="invalid-feedback"
+        *ngIf="form.get('username')?.hasError('minlength')"
+      >
+        Username can not be shorter than 6 characters.
+      </div>
+    </ng-container>
+  </div>
+  <div class="mb-4">
+    <label for="email" class="form-label"> Email </label>
+    <input
+      [ngClass]="{
+        ' is-invalid': getInputIsValid('email')
+      }"
+      id="email"
+      type="email"
+      class="form-control"
+      [readonly]="pending"
+      formControlName="email"
+    />
+    <ng-container *ngIf="getInputIsValid('email')">
+      <div
+        class="invalid-feedback"
+        *ngIf="form.get('email')?.hasError('required')"
+      >
+        This field is required !
+      </div>
+      <div
+        class="invalid-feedback"
+        *ngIf="form.get('email')?.hasError('email')"
+      >
+        Input correct Email Address !
+      </div>
+    </ng-container>
+  </div>
+  <div class="password-wrapper">
+    <label for="password" class="form-label"> Password </label>
+    <input
+      [ngClass]="{
+        ' is-invalid': getInputIsValid('password')
+      }"
+      type="password"
+      class="form-control"
+      id="password"
+      [readonly]="pending"
+      formControlName="password"
+    />
+    <ng-container *ngIf="getInputIsValid('password')">
+      <div
+        class="invalid-feedback"
+        *ngIf="form.get('password')?.hasError('required')"
+      >
+        This field is required !
+      </div>
+      <div
+        class="invalid-feedback"
+        *ngIf="form.get('password')?.hasError('minlength')"
+      >
+        Password can not be shorter than 6 characters.
+      </div>
+    </ng-container>
+  </div>
+
+  <button type="submit" class="btn btn-primary mb-3 d-flex justify-content-center align-items-center" [disabled]="pending">
+    <ng-container *ngIf="!pending; else elseLoadingBtn"> Login </ng-container>
+    <ng-template #elseLoadingBtn>
+      Register
+      <div class="loader"></div>
+    </ng-template>
+  </button>
+</form>
+<p class="login-message">
+  Already Registered? <strong routerLink="/login">Login </strong>
+</p>

@@ -1,0 +1,30 @@
+h1.register-title {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--warm-grey);
+}
+
+.form-control {
+  border: solid 1px #dddddd;
+}
+
+.password-wrapper {
+  margin-bottom: 40px;
+}
+
+button {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.login-message {
+  color: var(--charcoal-grey);
+  margin-bottom: 0;
+
+  strong {
+    font-weight: bold;
+    color: inherit;
+    margin-left: 11px;
+    cursor: pointer;
+  }
+}
