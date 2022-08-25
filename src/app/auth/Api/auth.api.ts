@@ -5,8 +5,13 @@ import { Injectable, Injector } from '@angular/core';
 import { Observable } from 'rxjs';
 
 // app
+import {
+  User,
+  LoginModel,
+  responseType,
+  RegisterModel,
+} from '@app/auth/shared/interface';
 import { ServiceBase } from '@shared/classes';
-import { LoginModel, RegisterModel } from '../shared/interface';
 
 @Injectable()
 export class AuthApi extends ServiceBase {
@@ -14,11 +19,21 @@ export class AuthApi extends ServiceBase {
     super(injector);
   }
 
-  login(model: LoginModel): Observable<any> {
-    return this.post$('users/login', model);
+  login(model: LoginModel): Observable<responseType<User>> {
+    return this.post$<responseType<LoginModel>, responseType<User>>(
+      'users/login',
+      {
+        user: { ...model },
+      }
+    );
   }
 
-  register(model: RegisterModel): Observable<any> {
-    return this.post$('users', model);
+  register(model: RegisterModel): Observable<responseType<User>> {
+    return this.post$<responseType<RegisterModel>, responseType<User>>(
+      'users',
+      {
+        user: { ...model },
+      }
+    );
   }
 }
