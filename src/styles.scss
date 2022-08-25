@@ -1,3 +1,50 @@
 @import "~ngx-toastr/toastr";
 @import "bootstrap";
-@import "assets/colors/color-variables.scss"
+@import "assets/colors/color-variables.scss";
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.loader {
+  margin: 0 5px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid transparent;
+  border-radius: 100%;
+  border-top-color: var(--shadow-blue);
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
