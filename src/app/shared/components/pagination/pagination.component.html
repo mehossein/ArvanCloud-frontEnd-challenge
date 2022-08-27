@@ -1,0 +1,31 @@
+<nav>
+  <ul class="pagination">
+    <li class="page-item pointer-cursor">
+      <a class="page-link" (click)="onPage(pageIndex - 1)"><</a>
+    </li>
+    <ng-container *ngFor="let page of Pages">
+      <li
+        *ngIf="
+          page == 0 ||
+            page == Pages.length - 1 ||
+            page == pageIndex ||
+            (page <= pageIndex + 1 && page >= pageIndex - 1);
+          else notNumber
+        "
+        (click)="onPage(page)"
+        class="page-item pointer-cursor"
+        [class.bg-primary]="page == pageIndex"
+        [class.text-white]="page == pageIndex"
+      >
+        <a class="page-link">{{ page + 1 }}</a>
+      </li>
+
+      <ng-template #notNumber>
+        <li *ngIf="page == pageIndex + 2 || page == pageIndex - 2">...</li>
+      </ng-template>
+    </ng-container>
+    <li class="page-item pointer-cursor">
+      <a class="page-link" (click)="onPage(pageIndex + 1)">></a>
+    </li>
+  </ul>
+</nav>

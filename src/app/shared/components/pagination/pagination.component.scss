@@ -1,0 +1,13 @@
+nav {
+  margin-top: auto;
+  .pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pointer-cursor {
+      cursor: pointer;
+    }
+  }
+}
