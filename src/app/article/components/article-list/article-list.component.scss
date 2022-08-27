@@ -1,0 +1,32 @@
+.list-wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 10px;
+  .title {
+    margin: 24px 0;
+  }
+
+  .table-header {
+    background-color: var(--gray-100);
+    border: 0;
+  }
+
+  .action-cell {
+    display: flex;
+    justify-content: space-evenly;
+
+    .btn {
+      color: #fff;
+    }
+
+    .dropdown-item {
+      cursor: pointer;
+    }
+  }
+
+  .show {
+    display: block;
+  }
+}
