@@ -1,0 +1,14 @@
+<div class="sidebar bg-primary">
+  <h4>Post</h4>
+  <ng-container
+    *ngFor="let item of getSidebarItems; trackBy: trackBySidebarItems"
+  >
+    <a
+      [routerLink]="item.link"
+      [routerLinkActive]="item.linkActiveClass"
+      [routerLinkActiveOptions]="{ exact: item.exactOption }"
+    >
+      {{ item.title }}
+    </a>
+  </ng-container>
+</div>

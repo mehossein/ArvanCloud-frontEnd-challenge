@@ -1,0 +1,26 @@
+.sidebar {
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+
+  h4 {
+    font-size: 1.45rem;
+    color: #fff;
+    margin: 16px 30px;
+  }
+
+  a {
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+    padding: 11px;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+
+    &.active {
+      background-color: #3e90db;
+      transition: all 110ms linear;
+    }
+  }
+}
