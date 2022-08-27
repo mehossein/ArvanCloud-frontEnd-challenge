@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           CookieHandler.setToken(user.token as string);
           delete user.token;
           localStorage.setItem('user', JSON.stringify(user));
-          this._router.navigate(['/articles']);
+          this._router.navigate(['articles/list']);
         },
         error: () => {
           this._alertSrv.warning('Email or password in invalid !');

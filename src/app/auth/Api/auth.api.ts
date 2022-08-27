@@ -19,6 +19,8 @@ export class AuthApi extends ServiceBase {
     super(injector);
   }
 
+  //#region "auth api"
+
   login(model: LoginModel): Observable<responseType<User>> {
     return this.post$<responseType<LoginModel>, responseType<User>>(
       'users/login',
@@ -36,4 +38,6 @@ export class AuthApi extends ServiceBase {
       }
     );
   }
+
+  //#endregion "auth api"
 }
