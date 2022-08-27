@@ -1,0 +1,41 @@
+.layout-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    overflow: hidden;
+    max-width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+  }
+
+  .content {
+    max-height: 90vh;
+    overflow: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 426px) {
+  .layout-wrapper .main {
+    grid-template-columns: 30% 70%;
+  }
+  .layout-wrapper .sidebar {
+    padding: 0px 8px;
+  }
+  .layout-wrapper .sidebar a {
+    padding: 11px;
+    font-size: 0.8rem;
+  }
+  .layout-wrapper .header .right-side {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 769px) {
+  .layout-wrapper .main {
+    grid-template-columns: 25% 75%;
+  }
+}
